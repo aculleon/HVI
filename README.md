@@ -65,7 +65,7 @@ A: 	&ensp;I have been using one for 10€ from amazon for many years, which can 
 	
 Q: 	&ensp;I need more Power!<br>
 A: 	&ensp;A smaller Inductor value could help, but be aware that the minimum on-time is 400 ns.
-	At high input voltages this could lead to overcurrent when using small inductro values.<br>
+	At high input voltages this could lead to overcurrent when using small inductor values.<br>
 
 Q: 	&ensp;Why is the text "Voltage Indicator", "Designed by XXX" and "HVI vX.X" not editable?<br>
 A:	&ensp;I like to use a font (Futured) for visuals which is not pre-installed on most systems. 
