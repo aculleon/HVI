@@ -5,7 +5,7 @@
 
 Dear Formula Student Teams,
 
-I've designed a High Voltage Indicator in accordance with [EV 5.4.8](https://www.formulastudent.de/fileadmin/user_upload/all/2024/rules/FS-Rules_2024_v1.1.pdf#subsubsection.4.5.4.8) to replace our heavy and bulky voltmeter. This device can supply between 5 V and 24 V (depending on the configuration) at a maximum of 1 W (isolated) or 3 W (non-isolated) from a 40 V to 800 V source. Two LEDs on the back indicate the presence of high voltage, so it can be mounted either directly to a viewing window in the TSAC or elsewhere with a cable to an external LED. As it is basically an HV step-down converter, it can also be used for any other application, e.g. to start a DC/DC (for LVS supply) from HV with the added benifit of significantly higher efficiency (50-80%) compared to an LDO (few percent).<br>
+I've designed a High Voltage Indicator in accordance with [EV 5.4.8 (Rules 2026_v1.0)](https://www.formulastudent.de/fileadmin/user_upload/all/2026/rules/FS-Rules_2026_v1.0.pdf#subsubsection.4.5.4.8) to replace our heavy and bulky voltmeter. This device can supply between 5 V and 24 V (depending on the configuration) at a maximum of 1 W (isolated) or 3 W (non-isolated) from a 40 V to 800 V source. Two LEDs on the back indicate the presence of high voltage, so it can be mounted either directly to a viewing window in the TSAC or elsewhere with a cable to an external LED. As it is basically an HV step-down converter, it can also be used for any other application, e.g. to start a DC/DC (for LVS supply) from HV with the added benifit of significantly higher efficiency (50-80%) compared to an LDO (few percent).<br>
 
 Most components used are standard parts, but key components include URLs linking to Mouser or datasheets (for quick access: highlight part, press "D").<br>
 
@@ -39,6 +39,18 @@ v1.1	Small layout changes and improvements, not tested but should be fine
 ```
 
 # Q&A
+Q: 	&ensp;How is the Rule [EV 5.4.8 (Rules 2026_v1.0)](https://www.formulastudent.de/fileadmin/user_upload/all/2026/rules/FS-Rules_2026_v1.0.pdf#subsubsection.4.5.4.8) "must continuously **illuminate at its
+full brightness** whenever a voltage greater than 60 V DC" fullfilled?<br>
+A: 	&ensp;The HVI is a self-ocillating high voltage stepdown with voltage regulation. <br>
+The output will stay constant at around 5 V regardless of the input voltage, thus the LEDs are always lit at full brightness.
+<br>
+
+Q: 	&ensp;How is the Rule [EV 5.4.8 (Rules 2026_v1.0)](https://www.formulastudent.de/fileadmin/user_upload/all/2026/rules/FS-Rules_2026_v1.0.pdf#subsubsection.4.5.4.8) "greater than 60 V DC" fullfilled?"<br>
+A: 	&ensp;The Rule does not require a logic to light up the LEDs exacly at 60 V - but it must be lit by then. So if the LEDs lights up below 60V, it sufficiently met the rule. 
+Once the HVI has turned on at around 39 V it will stay on until the voltage falls below around 12 V.<br>
+
+Q: 	&ensp;My team is using the HVI v1.1 design. Are there any changes regarding the Rules 2026 required?<br>
+A: 	&ensp;No. At the moment there is no rule known requireing a change. The rule change in [EV 5.4.8 (Rules 2026_v1.0)](https://www.formulastudent.de/fileadmin/user_upload/all/2026/rules/FS-Rules_2026_v1.0.pdf#subsubsection.4.5.4.8) was meet already by the HVI v1.1 design.<br>
 
 Q: 	&ensp;Why are 2x 4.7 mH inductors used instead of a 10 mH inductor?<br>
 A: 	&ensp;You will rarely find maximum voltage values for SMD inductors, so just an extra precaution.<br>
