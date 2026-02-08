@@ -2269,9 +2269,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Note on C11\nIf it is intend to drive a large load, \nthen you can use C11 instead."
+	(text "If it is intend to drive a large load, \nthen you can use C11 instead of C10."
 		(exclude_from_sim no)
-		(at 153.67 77.47 0)
+		(at 152.4 77.47 0)
 		(effects
 			(font
 				(size 0.6 0.6)
@@ -2333,6 +2333,16 @@
 		)
 		(uuid "4b5a5569-de37-443c-a170-1358a8451fa9")
 	)
+	(text "Alternative: RP-1205S/P (has short circuit protection)\n"
+		(exclude_from_sim no)
+		(at 141.605 92.71 0)
+		(effects
+			(font
+				(size 0.8 0.8)
+			)
+		)
+		(uuid "51e5be03-af8f-43cd-a723-bbb2698adf4b")
+	)
 	(text "5 V / 1 W max."
 		(exclude_from_sim no)
 		(at 192.405 93.98 0)
@@ -2345,7 +2355,7 @@
 		)
 		(uuid "7a327438-cc20-4be4-91c7-bbc2f0d2fcde")
 	)
-	(text "The HVI (High Voltage Indicator) is used to indicate voltages above 60 V for installation in the TSAC.\nThe design shown here should comply with FS-Rules, but I'm only sure after it has passed FSG scrutineering :D\nEdit: It passed scruti.\n\nLayout: \nThe design uses the VIPER06 as a self-oscillating and self-regulating highside-switch, which corresponds to the overall topology of a buck converter.\nIn order to keep the design compact, the 60 V detection was omitted. This complies with FS-Rules, as the indicator light must light up at 60 V and above, \nbut may also light up at lower voltages. In this case, this is already the case from approx. 40 V. \nGalvanic isolation can theoretically be dispensed when mounted with an isolating housing and viewing window. \nHowever, as galvanic isolation is useful in many cases, it was implemented by using an small isolating DC/DC converter (3kV isolation rating).\nThe back of the circuit board is designed so that the LEDs do not require touch protection, as no dangerous voltage is present (isolated by PCB).\nHowever, all THT components on the back must be covered.\nAlternatively, the circuit board can be placed anywhere in the TSAC and an LED can be attached to the housing via the external output (1 W max.).\nIf the included 1 W DC/DC is not used, approx. 3 W can be drawn directly (unisolated!) at 12 V. \n\nImportant: Do not forget to isolate the board with Plastik70 after soldering (necessary due to isolation distances (EV 4.3.6 Table 5 Conformal Coating).\n\nFS-Rules 2024 v1.1 / Source: https://www.formulastudent.de/fsg/rules/\n\nT1.3.1  	Direct Connection - two devices or circuits are directly connected if the connection is not routed through any common PCB \n			and does not include any devices or functionality other than overcurrent protection or connectors.\n\nEV 1.2.1	Galvanic Isolation - two electric circuits are defined as galvanically isolated if all of the following conditions are true:\n			• The resistance between both circuits is ≥500 Ω/V, related to the maximum TS voltage of the vehicle, at a test voltage of \n			   maximum TS voltage or 250 V, whichever is higher.\n			• The isolation test voltage RMS, AC for 1 min, between both circuits is higher than three times the maximum TS voltage or 750 V, \n			   whichever is higher.\n			• The working voltage of the isolation barrier, if specified in the datasheet, is higher than the maximum TS voltage.\n\nEV 5.4.8 	Each TSAC must have a prominent indicator, a voltmeter, or a red LED visible even in bright sunlight\n 			that will illuminate whenever a voltage greater than 60 V DC or half the maximum TS voltage, whichever\n			is lower, is present at the vehicle side of the AIRs.\n\nEV 5.4.9	The indicator must be clearly visible while disconnecting the TSAC from the vehicles. The indicator \n			must be clearly marked with \"Voltage Indicator\"\n\nEV 5.4.10	The indicator must be hard-wired electronics without software control, directly and only supplied by \n			from the LVS or removed from the vehicle.\n			the TS from the vehicle side of the AIRs, and always working, even if the accumulator is disconnected \n\n\nEV 4.3.6	If TS and LVS are on the same PCB, they must be on separate well-defined areas of the board, meeting \n			the spacing requirements in table 5, each area clearly marked with \"TS\" or \"LV\". \n			The outline of the area required for spacing must be marked. \"Conformal coating\" refers to a coating \n			insulator, solder resist is not a coating.\n			Table 5: Spacing required between TS and LV -> 300 V DC to 600 V DC: 4.0 mm with conformal coating.\n\nEV 4.3.7	Teams must be prepared to demonstrate spacing on team-built equipment. For inaccessible circuitry, \n			fully assembled spare boards must be available."
+	(text "The HVI (High Voltage Indicator) is used to indicate voltages above 60 V for installation in the TSAC.\nThe design shown here should comply with FS-Rules, but I'm only sure after it has passed FSG scrutineering :D\nEdit: It passed scruti.\n\nLayout: \nThe design uses the VIPER06 as a self-oscillating and self-regulating highside-switch, which corresponds to the overall topology of a buck converter.\nIn order to keep the design compact, the 60 V detection was omitted. This complies with FS-Rules, as the indicator light must light up at 60 V and above, \nbut may also light up at lower voltages. In this case, this is already the case from approx. 40 V. \nGalvanic isolation can theoretically be dispensed when mounted with an isolating housing and viewing window. \nHowever, as galvanic isolation is useful in many cases, it was implemented by using an small isolating DC/DC converter (3kV isolation rating).\nThe back of the circuit board is designed so that the LEDs do not require touch protection, as no dangerous voltage is present (isolated by PCB).\nHowever, all THT components on the back must be covered.\nAlternatively, the circuit board can be placed anywhere in the TSAC and an LED can be attached to the housing via the external output (1 W max.).\nIf the included 1 W DC/DC is not used, approx. 3 W can be drawn directly (unisolated!) at 12 V. \n\nImportant: Do not forget to isolate the board 2 times with Plastik70 after soldering (necessary due to isolation distances (EV 4.3.6 Table 5 Conformal Coating).\n\nFS-Rules 2024 v1.1 / Source: https://www.formulastudent.de/fsg/rules/  (afaik also Rules 2026v1.1 conform)\n\nT1.3.1  	Direct Connection - two devices or circuits are directly connected if the connection is not routed through any common PCB \n			and does not include any devices or functionality other than overcurrent protection or connectors.\n\nEV 1.2.1	Galvanic Isolation - two electric circuits are defined as galvanically isolated if all of the following conditions are true:\n			• The resistance between both circuits is ≥500 Ω/V, related to the maximum TS voltage of the vehicle, at a test voltage of \n			   maximum TS voltage or 250 V, whichever is higher.\n			• The isolation test voltage RMS, AC for 1 min, between both circuits is higher than three times the maximum TS voltage or 750 V, \n			   whichever is higher.\n			• The working voltage of the isolation barrier, if specified in the datasheet, is higher than the maximum TS voltage.\n\nEV 5.4.8 	Each TSAC must have a prominent indicator, a voltmeter, or a red LED visible even in bright sunlight\n 			that will illuminate whenever a voltage greater than 60 V DC or half the maximum TS voltage, whichever\n			is lower, is present at the vehicle side of the AIRs.\n\nEV 5.4.9	The indicator must be clearly visible while disconnecting the TSAC from the vehicles. The indicator \n			must be clearly marked with \"Voltage Indicator\"\n\nEV 5.4.10	The indicator must be hard-wired electronics without software control, directly and only supplied by \n			from the LVS or removed from the vehicle.\n			the TS from the vehicle side of the AIRs, and always working, even if the accumulator is disconnected \n\n\nEV 4.3.6	If TS and LVS are on the same PCB, they must be on separate well-defined areas of the board, meeting \n			the spacing requirements in table 5, each area clearly marked with \"TS\" or \"LV\". \n			The outline of the area required for spacing must be marked. \"Conformal coating\" refers to a coating \n			insulator, solder resist is not a coating.\n			Table 5: Spacing required between TS and LV -> 300 V DC to 600 V DC: 4.0 mm with conformal coating.\n\nEV 4.3.7	Teams must be prepared to demonstrate spacing on team-built equipment. For inaccessible circuitry, \n			fully assembled spare boards must be available."
 		(exclude_from_sim no)
 		(at 15.875 165.1 0)
 		(effects
@@ -2380,16 +2390,16 @@
 		)
 		(uuid "8fe3cf8c-8fa7-47be-a820-885ce650da48")
 	)
-	(text "Isolated output"
+	(text "Output Isolation: 2 kV AC RMS\n60 seconds / 60 Hz"
 		(exclude_from_sim no)
-		(at 133.985 90.805 0)
+		(at 141.605 90.805 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1 1)
 				(thickness 0.254)
 				(bold yes)
 			)
-			(justify left bottom)
+			(justify bottom)
 		)
 		(uuid "9826aad6-0384-4a69-b19c-1dfceff6a118")
 	)
@@ -11148,18 +11158,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "31ff5029-c7d4-4e44-9cb6-3bddd9ac43cb")
 		(property "Reference" "PS1"
-			(at 141.605 71.755 0)
+			(at 141.605 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "PEME1-S12-S5-S"
-			(at 141.605 74.295 0)
+		(property "Value" "RP-1205S"
+			(at 141.605 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11176,7 +11185,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.mouser.de/ProductDetail/CUI-Inc/PEME1-S12-S5-S?qs=iLbezkQI%252Bsil9QGLUwaYwA%3D%3D"
+		(property "Datasheet" "https://www.mouser.de/ProductDetail/RECOM-Power/RP-1205S?qs=8OBu2JtKQqq6GIat8AjVyQ%3D%3D"
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11195,7 +11204,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" "CUI Inc."
+		(property "MANUFACTURER" ""
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11205,7 +11214,7 @@
 				(hide yes)
 			)
 		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "10.16mm"
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11215,7 +11224,7 @@
 				(hide yes)
 			)
 		)
-		(property "STANDARD" "Manufacturer Recommendations"
+		(property "STANDARD" ""
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11225,7 +11234,7 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "1.02"
+		(property "PARTREV" ""
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11271,7 +11280,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Number" "PEME1-S12-S5-S "
+		(property "Manufacturer Number" ""
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11280,7 +11289,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser" "490-PEME1-S12-S5-S"
+		(property "Mouser" ""
 			(at 141.605 81.915 0)
 			(effects
 				(font
@@ -11290,11 +11299,12 @@
 			)
 		)
 		(property "LCSC" "X"
-			(at 141.605 81.915 0)
+			(at 141.605 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
